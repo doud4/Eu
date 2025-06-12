@@ -140,24 +140,49 @@ function App() {
             <div style={{ color: '#a18c6d', fontSize: 14, marginBottom: 6 }}>
               {current + 1} / {photos.length}
             </div>
-            {/* Botão música */}
-            <button
-              onClick={() => window.open("https://open.spotify.com/track/7K4qp4Xh4nC1rXqY0tffx3", '_blank')}
+            {/* Cartão de música com player Spotify */}
+            <div
               style={{
-                background: '#4b3f20', color: '#fff', border: 'none',
-                borderRadius: 14, padding: '10px 24px', fontSize: 17,
-                marginBottom: 28, cursor: 'pointer', fontWeight: 500,
-                boxShadow: '0 2px 8px #0001'
-              }}>
-              Ouvir música
-            </button>
-          </div>
-        }
+                display: 'flex',
+                alignItems: 'center',
+                background: '#fff',
+                borderRadius: 18,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                padding: '10px 18px 10px 10px',
+                width: 'fit-content',
+                minWidth: 340,
+                margin: '32px auto 28px auto'
+              }}
+            >
+              <iframe
+                src="https://open.spotify.com/embed/track/5FbcIkgUDNt6mZdDVFwVyE?si=8b8a47d7585c4efe"
+                width="80"
+                height="80"
+                frameBorder="0"
+                allowTransparency="true"
+                allow="encrypted-media"
+                title="Ter o coração no chão - ANAVITÓRIA"
+                style={{
+                  borderRadius: 10,
+                  minWidth: 80,
+                  marginRight: 16
+                }}
+              ></iframe>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ fontSize: 21, fontWeight: 'bold', color: '#181818', marginBottom: 4 }}>
+                  Ter o coração no chão
+                </div>
+                <div style={{ fontSize: 17, color: '#454545', letterSpacing: '0.02em' }}>
+                  ANAVITÓRIA
+                </div>
+              </div>
+            </div>
+          </div>  /* FECHA O BLOCO DO CARROSSEL */}
         {/* Rodapé */}
         <div style={{
           fontSize: 13, color: '#a18c6d', marginTop: 'auto', marginBottom: 12
         }}>
-          Feito com amor por você para sua parceira, 2025.
+          De Isadora para Isabella, feito com amor, 2025.
         </div>
       </div>
     </div>
