@@ -6,9 +6,11 @@ function App() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    fetch('/photos/photos.json')
+    fetch(`${import.meta.env.BASE_URL}photos/photos.json`)
       .then(res => res.json())
-      .then(setPhotos);
+      .then(data => {
+        setPhotos(data);
+      });
   }, []);
 
   const prev = () => setCurrent((c) => (c - 1 + photos.length) % photos.length);
@@ -113,7 +115,7 @@ function App() {
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>
                 <img
-                  src={`/photos/${photos[current].src}`}
+                  src={`${import.meta.env.BASE_URL}photos/${photos[current].src}`}
                   alt=""
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
